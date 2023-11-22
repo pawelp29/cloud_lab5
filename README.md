@@ -61,6 +61,8 @@ Aby wygenerować obciążenie procesora i przetestować autoskaler, wykorzystano
 kubectl -n zad5 run -i --tty load-generator --rm --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://php-apache; done"
 ```
 
+![Działanie generatora obciążenia](./generator.png)
+
 Przed uruchomieniem generatora obciążenia działała tylko 1 replika _php-apache_:
 
 ![Zrzut ekranu z jedną repliką](./autoscaler-before.png)
